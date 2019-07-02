@@ -1,0 +1,13 @@
+.produtos-fundo {
+  padding-left: 18px;
+  background-color: var(--gray-lighter);
+  min-height: calc(100vh);
+
+  .titulo-pagina {
+    font-size: 1.053em;
+    color: var(--gray-light);
+    font-family: var(--ion-font-family);
+    padding: 17px 0px 5px 9px;
+    font-weight: 500;
+  }
+}

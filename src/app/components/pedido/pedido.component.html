@@ -1,0 +1,20 @@
+<div class="cartao-pedido">
+  <div class="display-flex">
+    <div class="conteiner-imagem">
+      <img [src]="itemPedido.produtos[0].imagem" alt="" (error)="onError($event)">
+    </div>
+    <div class="informacao">
+      <div class="title">{{itemPedido.produtos[0].descricao}}</div>
+      <div class="price">R${{itemPedido.valorTotal | FormatReal }}</div>
+      <div class="nome">{{itemPedido.deQuemE}}</div>
+    </div>
+  </div>
+  <div class="display-flex">
+    <div class="quantidade">
+      {{itemPedido.quantidade}}
+    </div>
+    <div class="ellipsis">
+      <fa-icon [icon]="faEllipsisH" class="fas fa-ellipsis-h"></fa-icon>
+    </div>
+  </div>
+</div>

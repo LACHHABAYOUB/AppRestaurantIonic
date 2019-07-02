@@ -1,0 +1,24 @@
+<div class="table">
+    <div class="wrapTableTech">
+        <div class="blocTech">
+            <div class="tech-left-cell">Produto</div>
+            <div class="tech-center-cell">Qtde</div>
+            <div class="tech-center-cell">X</div>
+            <div class="tech-center-cell">Preço Unit</div>
+            <div class="tech-center-cell">Preço Total</div>
+        </div>
+        <div class="blocCat">
+            <app-pedido-consumo class="tech-row" *ngFor="let pedido of pedidos" [itemPedido]="pedido"></app-pedido-consumo>
+        </div>
+    </div>
+    <div class="footer-extrato">
+        <div class="point">................................................................................</div>
+        <div class="footer">
+            <div class="texto">Total consumido</div>
+            <div class="price">R$ {{_pedidoStateService.ordem.valorTotal | FormatReal}}</div>
+        </div>
+        <div class="produto">{{_pedidoStateService.ordem.pedidosPendentes}} Produtos</div>
+        <div class="Data">Abertura da mesa:
+            {{dataHorarioAtualMilisegs | date:'dd/MM/yyyy - HH:mm' }} </div>
+    </div>
+</div>

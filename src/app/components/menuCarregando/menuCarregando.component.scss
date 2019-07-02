@@ -1,0 +1,79 @@
+.menu-grupo-carregando {
+  width: 7.526em;
+  position: fixed;
+  right: 0px;
+  text-align: center;
+  bottom: 0;
+  height: 86%;
+  z-index: 9999;
+
+  .corpo-menu-componente {
+    background: var(--white);
+    box-shadow: 0px 0.5px 1px 0px rgba(0, 0, 0, 0.16);
+  }
+
+  h2 {
+    color: var(--orange-primary);
+    font-size: 0.947em;
+    padding-top: 9px;
+    margin-top: 0px;
+  }
+
+  .grupos {
+    list-style: none;
+    padding: 0px;
+    height: calc(81vh);
+    overflow-y: auto;
+    margin-top: 5px;
+    direction: rtl;
+
+    li {
+      list-style: none;
+      margin: 0px 0px 18px;
+      cursor: pointer;
+    }
+
+    @media screen and (min-height: 1024px) {
+      height: calc(85.6vh);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 89.5%;
+  }
+  
+  .wrapper-loading-band-cell {
+    display: flex;
+    margin-bottom: 0px;
+  }
+
+  // Animation
+  @keyframes placeHolderShimmer {
+    0% {
+      background-position: -468px 0;
+    }
+    100% {
+      background-position: 468px 0;
+    }
+  }
+
+  .animated-background {
+    animation-duration: 1.25s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: var(--white-gray);
+    background: linear-gradient(to right, #f6f6f6 8%, #f0f0f0 18%, #f6f6f6 33%);
+    background-size: 800px 104px;
+    height: 96px;
+    position: relative;
+  }
+
+  .text-line {
+    height: 32px;
+    width: 230px;
+    margin: 4px 0;
+    @extend .animated-background;
+  }
+}

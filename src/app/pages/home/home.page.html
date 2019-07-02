@@ -1,0 +1,49 @@
+<ion-app>
+  <ion-header no-border>
+    <app-head [mesa]="mesa">
+      <app-pedidoPreparo *ngIf="animationStateService.botaoEnviarPedido.mostrar" [titulo]="'Enviar Pedido para preparo'"
+        [descricao]="_pedidoStateService.ordem.pedidosPendentes+ ' itens pendentes'" [onClick]="onMostrarPainelPedidos"
+        class="componente-pedido-prepado">
+      </app-pedidoPreparo>
+      <app-extrato [valor]="'$R '+ (_pedidoStateService.totalExtrato.valor | FormatReal)"
+        [itensFinalizados]="_pedidoStateService.ItensPedidosCompletados.numero" (onVerExtrato)="onVerExtrato($event)">
+      </app-extrato>
+    </app-head>
+  </ion-header>
+  <ion-content>
+    <app-slideshow [open]="animationStateService.slide.mostrar"></app-slideshow>
+
+    <div *ngIf="!animationStateService.slide.mostrar">
+      <app-visualizacaoExtrato [mostrar]="animationStateService.visulizacaoExtrato.mostrar"
+        [onSolicitarConta]="onSolicitarConta" [onFinalizarPedido]="onFinalizarPedido"
+        [onFinalizarProgreso]="onFinalizarProgreso"></app-visualizacaoExtrato>
+      <app-painelPedidos [mostrar]="animationStateService.panelPedidos.mostrar"
+        [onAdicionarMaisItems]="onAdicionarMaisItems" [onFinalizarPedido]="onFinalizarPedido"
+        [onFinalizarProgreso]="onFinalizarProgreso"></app-painelPedidos>
+      <app-andamento [pedidosEmAndamento]="_pedidoStateService.produtosPedido.numero"
+        (onVerAndamentos)="onVerAndamentos($event)"></app-andamento>
+      <div *ngIf="!subGrupoStateService.isLoading.subgrupos">
+        <app-menu [items]="subGrupoStateService.lista.subgrupos" [onSelecionar]="selecionarGrupo"
+          [placeHolderImagems]="['../../../assets/icon/hamburger-solid.svg','../../../assets/icon/carrot-solid.svg','../../../assets/icon/hotdog-solid.svg','../../../assets/icon/cookie-solid.svg', '../../../assets/icon/pizza-slice-solid.svg', '../../../assets/icon/pepper-hot-solid.svg']">
+        </app-menu>
+      </div>
+      <div *ngIf="subGrupoStateService.isLoading.subgrupos">
+        <app-menu-carregando></app-menu-carregando>
+      </div>
+      <div *ngIf="errorMensagemListaSubGrupo || errorMensagemListaClasses" class="estado-em-branco">
+        <fa-icon [icon]="faExclamationTriangle" class="fa-exclamation-triangle-icon"></fa-icon>
+        <div class="texto-messagem">{{errorMensagemListaSubGrupo || errorMensagemListaClasses}}</div>
+      </div>
+      <div *ngIf="!errorMensagemListaSubGrupo && !errorMensagemListaClasses">
+        <ion-router-outlet class="contenedor-filhos"></ion-router-outlet>
+      </div>
+    </div>
+  </ion-content>
+  <app-finalizacao-pedido [open]="animationStateService.ordemConfirmacao.mostrar"
+    (onFazerOutroPedido)="onFazerOutroPedido($event)"></app-finalizacao-pedido>
+  <div *ngIf="animationStateService.panelPedidos.showBackdrop">
+    <ion-backdrop style="z-index: 11;opacity: 0.03;" visible="true" stop-propagation="false">
+    </ion-backdrop>
+    <ion-spinner class="spinner-backdrop" name="dots"></ion-spinner>
+  </div>
+</ion-app>

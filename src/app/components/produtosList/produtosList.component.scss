@@ -1,0 +1,9 @@
+.flex-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.flex-contenedor > div {
+  position: relative;
+}

@@ -1,0 +1,59 @@
+.produtos-fundo-carregando {
+  padding-left: 18px;
+  background-color: var(--gray-lighter);
+  min-height: calc(100vh);
+
+  .titulo-pagina {
+    font-size: 1.053em;
+    color: var(--gray-light);
+    font-family: var(--ion-font-family);
+    padding: 17px 0px 5px 9px;
+    font-weight: 500;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-right: 162px;
+  }
+
+  .flex-container > div {
+    position: relative;
+  }
+}
+
+.wrapper-loading-band-cell {
+  display: flex;
+  margin-bottom: 0px;
+}
+
+// Animation
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.animated-background {
+  animation-duration: 1.25s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: var(--white-gray);
+  background: linear-gradient(to right, #f6f6f6 8%, #f0f0f0 18%, #f6f6f6 33%);
+  background-size: 800px 104px;
+  height: 96px;
+  position: relative;
+}
+
+.text-line {
+  height: 32px;
+  width: 230px;
+  margin: 4px 0;
+  @extend .animated-background;
+}

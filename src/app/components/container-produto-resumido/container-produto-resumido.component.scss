@@ -1,0 +1,57 @@
+.item {
+  background-color: transparent;
+  width: 7.063em;
+  height: 9.875em;
+  margin-right: 1.250em;
+
+  &.selected {
+    img {
+      filter: brightness(85%);
+    }
+    border-radius: 6px;
+    filter: brightness(120%);
+
+    .botao-check {
+      display: block;
+      color: #1a9a4e;
+      font-size: 1.150em;
+    }
+
+  }
+
+  .botao-check {
+    position: absolute;
+    top: 5.5%;
+    right: 7%;
+    display: none;
+  }
+
+  img {
+    height: 5.211em;
+    width: 6em;
+    @media only screen and (min-width: 1365px) {
+      height: 5.8em;
+    }
+  }
+
+  .imagem {
+    margin-left: 0.500em;
+  }
+
+  .descricao {
+    color: #565555;
+    font-family: var(--ion-font-family);
+    font-size: 1.063em;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .valor {
+    color: #1a9a4e;
+    font-family: var(--ion-font-family);
+    font-size: 0.938em;
+    text-align: center;
+    margin-top: 0.500em;
+  }
+
+}

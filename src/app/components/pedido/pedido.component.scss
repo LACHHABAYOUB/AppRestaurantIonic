@@ -1,0 +1,62 @@
+.cartao-pedido {
+  display: flex;
+  justify-content: space-between;
+
+  .conteiner-imagem {
+    height: 5.053em;
+    width: 7.947em;
+    background-color: var(--white);
+    border-radius: 5px;
+
+    img {
+      height: 5.053em;
+    }
+  }
+
+  .informacao {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 1.025em;
+    line-height: 1.3em;
+
+    .title {
+      font-size: 1em;
+      font-weight: bold;
+      font-family: var(--ion-font-family);
+      margin-top: 4px;
+    }
+
+    .price {
+      font-size: 1em;
+      font-weight: bold;
+      font-family: var(--ion-font-family);
+    }
+
+    .nome {
+      font-size: 1em;
+      font-family: var(--ion-font-family);
+    }
+  }
+
+  .quantidade {
+    font-size: 1.684em;
+    font-weight: bold;
+    font-family: var(--ion-font-family);
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    margin-right: 17px;
+  }
+
+  .ellipsis {
+    display: flex;
+    align-items: center;
+    font-size: 1.288em;
+  }
+}
+
+.display-flex {
+  display: flex;
+}

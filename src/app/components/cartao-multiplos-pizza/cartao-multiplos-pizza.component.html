@@ -1,0 +1,17 @@
+<div class="cartao-xl">
+    <div class="fundo"></div>
+    <div class="item">
+        <div class="pizza p-r-50-perc">
+            <div [ngClass]="this.obterClassSabores()">
+                <img *ngFor="let produto of produtos; let i = index"
+                     [src]="produto.imagem" alt="" (error)="onError($event)">
+            </div>
+        </div>
+        <div class="p-t-45-perc">
+            <div *ngFor="let produto of produtos; let i = index">
+                <div class="titulo">1/{{produtos.length + ' - ' + produto.descricao}}</div>
+                <div class="descricao">{{produto.subDescricao}}</div>
+            </div>
+        </div>
+    </div>
+</div>

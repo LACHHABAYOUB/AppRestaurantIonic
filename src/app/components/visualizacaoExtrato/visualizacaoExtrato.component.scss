@@ -1,0 +1,53 @@
+.visualizacao-extrato {
+  width: 25em;
+  height: 100%;
+  position: fixed;
+  background-color: var(--black);
+  color: var(--white);
+  right: -33em;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  opacity: 0.9;
+  padding: 12.55px;
+  transition: right 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+
+  .titulo {
+    font-family: var(--ion-font-family);
+    font-size: 1.2em;
+    text-align: left;
+    margin-top: 5px;
+    margin-left: 11px;
+    font-weight: bold;
+  }
+
+  .conteiner-lista {
+    padding: 0 12px;
+    height: inherit;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .conteiner-elementos-lista {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & > div {
+      margin-top: 7px;
+    }
+  }
+
+  &.open {
+    right: 0px;
+    transition: right 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  }
+
+  .pedidos-list {
+    height: 75%;
+    overflow: auto;
+  }
+}

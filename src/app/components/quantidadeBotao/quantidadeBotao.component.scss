@@ -1,0 +1,29 @@
+.quantidade-botao {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--white-secondary);
+  color: var(--gray-light);
+  border-radius: 5px;
+  height: 2.368em;
+  width: 4.689em;
+  font-family: var(--ion-font-family);
+  outline: none;
+  align-items: center;
+
+  .texto {
+    display: flex;
+    justify-content: center;
+    color: var(--gray-light);
+    font-size: 1.263em;
+  }
+
+  button {
+    background-color: var(--white-secondary);
+    color: var(--gray-light);
+    font-family: var(--ion-font-family);
+    font-size: 1.263em;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+  }
+}

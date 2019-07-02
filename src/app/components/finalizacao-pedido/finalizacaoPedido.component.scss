@@ -1,0 +1,37 @@
+.tela-finalizacao-pedido {
+  background-color: var(--green-light);
+  width: 100%;
+  min-height: calc(100vh);
+  z-index: 9999;
+  top: 0px;
+  position: absolute;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform-origin: right bottom;
+  transform: scale(0);
+  transition: transform 0.3s ease, border-radius 0.3s ease, opacity 0.3s ease;
+
+  fa-icon {
+    font-size: 10em;
+    color: var(--white);
+  }
+
+  p {
+    margin-top: 30px;
+    margin-bottom: 20px !important;
+    color: var(--white);
+    font-size: 1.263em;
+    line-height: 1.4;
+    text-align: center;
+    margin: 0px auto;
+  }
+
+  &.open {
+    transform: scale(1);
+    border-radius: 0px;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,29 @@
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  height: 2.632em;
+  align-items: center;
+  background-color: var(--white);
+  padding-left: 27px;
+  padding-right: 27px;
+  box-shadow: 0px 0.5px 1px 0px rgba(0, 0, 0, 0.16);
+
+  .tabela-informacao {
+    font-size: 0.632em;
+    color: var(--gray-light);
+    font-family: var(--ion-font-family), "regular", sans-serif;
+  }
+
+  .logotipo {
+    background-image: url("https://www.festisite.com/static/partylogo/img/logos/burger-king.png");
+    font-size: 0.632em;
+    color: var(--gray-light);
+    background-size: cover;
+    width: 37px;
+    height: 36px;
+  }
+
+  .display-flex {
+    display: flex;
+  }
+}

@@ -1,0 +1,25 @@
+.conteiner-produtos {
+  overflow-y: auto;
+
+  .hide {
+    display: none;
+  }
+
+  .estado-em-branco {
+    padding: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .fa-hamburguer-icon {
+      color: var(--gray);
+      font-size: 3.158em;
+    }
+
+    .text {
+      font-size: 0.947em;
+      color: var(--gray-light);
+    }
+  }
+}

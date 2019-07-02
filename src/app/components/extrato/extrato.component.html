@@ -1,0 +1,12 @@
+<div class="extrato" (click)="onVerExtrato($event)" [ngStyle]="ngStyle" [ngClass]="{'sem-consumo': itensFinalizados === 0 }">
+  <div class="icone-faturamento">
+    <div *ngIf="itensFinalizados" class="numero-pedidos">
+      <div>{{itensFinalizados}}</div>
+    </div>
+  </div>
+  <div>
+    <div *ngIf="itensFinalizados != 0" class="valor"> {{valor}}</div>
+    <div *ngIf="itensFinalizados == 0" class="legenda">Sem consumo</div>
+    <div *ngIf="itensFinalizados != 0" class="legenda">Ver extrato</div>
+  </div>
+</div>

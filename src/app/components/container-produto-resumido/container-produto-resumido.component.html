@@ -1,0 +1,9 @@
+<div class="item">
+    <img class="imagem" [src]="produto.imagem" (error)="obterImagemPadrao($event)">
+    <div class="descricao">{{produto.descricao}}</div>
+    <div class="valor">R$ {{produto.preco | FormatReal}}</div>
+    <div class="botao-check">
+        <fa-icon [icon]="faCheckCircle"></fa-icon>
+    </div>
+</div>
+

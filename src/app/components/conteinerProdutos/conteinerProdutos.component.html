@@ -1,0 +1,14 @@
+<div class="conteiner-produtos">
+  <div *ngIf="carregandoProdutos.classes">
+    <app-produtosFundo-carregando>
+    </app-produtosFundo-carregando>
+  </div>
+  <div *ngIf="!carregandoProdutos.classes && existemProdutos.classes">
+    <app-produtosFundo>
+    </app-produtosFundo>
+  </div>
+  <div class="estado-em-branco" *ngIf="!carregandoProdutos.classes && !existemProdutos.classes">
+    <fa-icon [icon]="faHamburger" class="fa-hamburguer-icon"></fa-icon>
+    <div class="text">Não há produtos nesta opcão.</div>
+  </div>
+</div>

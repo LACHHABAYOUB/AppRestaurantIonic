@@ -1,0 +1,9 @@
+<div class="tela-finalizacao-pedido" [ngClass]="{'open': open}">
+  <div>
+    <fa-icon [icon]="faCheckCircle"></fa-icon>
+    <p>Seu pedido foi realizado com sucesso e esta<br> na fila para preparo. Assim que ficar pronto<br> levaremos até
+      sua mesa.
+    </p>
+    <app-button [texto]="'Fazer outro pedido'" [onClick]="onFazerOutroPedido"></app-button>
+  </div>
+</div>

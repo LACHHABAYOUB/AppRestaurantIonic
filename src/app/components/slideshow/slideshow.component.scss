@@ -1,0 +1,44 @@
+ion-slides {
+  --bullet-background: var(--black);
+  --bullet-background-active: var(--white);
+  --bullet-bottom: 10px;
+  --bullet-left: 450px;
+  --bullet-width: 100%;
+}
+
+.slideshow {
+  position: absolute;
+  display: flex;
+  z-index: 10;
+  width: 100%;
+  align-items: center;
+  transform-origin: right bottom;
+  transform: scale(0);
+  transition: transform 0.3s ease, border-radius 0.3s ease, opacity 0.3s ease;
+  transition: all 0.3s ease;
+
+  .swiper-slide .img {
+    width: 100%;
+    height: calc(94.2vh);
+  }
+
+  .button {
+    background-color: var(--green-light);
+    border-radius: 5px;
+    color: var(--white);
+    text-align: center;
+    font-family: var(--ion-font-family);
+    font-weight: 400;
+    width: 18.375em;
+    height: 2.75px;
+    position: fixed;
+    margin-left: -240px;
+    margin-top: 10px;
+  }
+
+  &.open {
+    transform: scale(1);
+    border-radius: 0px;
+    opacity: 1;
+  }
+}

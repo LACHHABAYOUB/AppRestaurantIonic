@@ -1,0 +1,7 @@
+<div class="flex-contenedor">
+    <div *ngFor="let item of produtos" [attr.id]="item.id">
+        <app-cartao [id]="item.id" [imagemUrl]="item.imagem" [titulo]="item.descricao" [legenda]="item.preco" [descricao]="item.subDescricao" [placeHolderImagem]="'../../../assets/icon/imagem.svg'"
+            [onSelecionar]="selecionarProduto">
+        </app-cartao>
+    </div>
+</div>

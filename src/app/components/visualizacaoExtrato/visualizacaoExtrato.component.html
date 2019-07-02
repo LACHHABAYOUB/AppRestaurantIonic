@@ -1,0 +1,16 @@
+<div class="visualizacao-extrato" [ngClass]="{'open' : mostrar }">
+    <div class="titulo">Extrato de consumo</div>
+    <div class="conteiner-lista">
+        <div class="conteiner-elementos-lista">
+            <app-pedidosListConsumo [pedidos]="pedidos" class="pedidos-list"></app-pedidosListConsumo>
+            <div>
+                <app-button [texto]="'Solicitar a Conta'"
+                    [ngStyle]="{'width': '100%',  'height': '2.1em','font-size': '1.2em'}"
+                    [onClick]="onSolicitarConta"></app-button>
+                <app-comprandoBotao [texto]="'CONTINUAR COMPRANDO'"
+                    [ngStyle]="{'width': '100%',  'height': '2.1em','font-size': '1.2em','margin-top': '23px'}"
+                    [onClick]="onSolicitarConta"></app-comprandoBotao>
+            </div>
+        </div>
+    </div>
+</div>

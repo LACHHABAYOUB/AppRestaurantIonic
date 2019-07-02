@@ -1,0 +1,18 @@
+<div class="painel-pedidos" [ngClass]="{'open' : mostrar }">
+    <div class="titulo">Meus Pedidos </div>
+    <div class="conteiner-lista">
+        <div class="text-quantidade">Quantidade </div>
+        <div class="conteiner-elementos-lista">
+            <app-pedidosList [itensPedido]="itensPedido" class="pedidos-list"></app-pedidosList>
+            <div>
+                <app-button [texto]="'Adicionar mais itens'"
+                    [ngStyle]="{'width': '100%',  'height': '2.1em','font-size': '1.2em'}"
+                    [onClick]="onAdicionarMaisItems"></app-button>
+                <app-finalizarBotao [textoIzquerdo]="'FINALIZAR PEDIDO'" [textoDereito]="'R$ '+ (_pedidoStateService.ordem.valorTotal | FormatReal)"
+                    [ngStyle]="{'width': '100%',  'height': '2.1em', 'margin-top': '23px'}"
+                    [onClick]="onFinalizarPedido" progress="{{progresoFinalizarPedido}}" appProgressButton [onFinalizarProgreso]="onFinalizarProgreso">
+                </app-finalizarBotao>
+            </div>
+        </div>
+    </div>
+</div>

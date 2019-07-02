@@ -1,0 +1,25 @@
+.horizontal-container {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-right: 120px;
+  @media only screen and (min-width: 1023px) {
+    margin-right: 145px;
+  }
+  @media only screen and (min-width: 1365px) {
+    margin-right: 185px;
+  }
+  @media only screen and (min-width: 1935px) {
+    margin-right: 190px;
+  }
+  @media only screen and (min-width: 2562px) {
+    margin-right: 230px;
+  }
+}
+
+.container {
+  display: inherit;
+}

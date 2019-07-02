@@ -1,0 +1,10 @@
+<div class="produtos-fundo">
+    <div *ngFor="let classe of listaClasses.classes; trackBy: trackItems" [attr.id]="classe.id">
+        <div *ngIf="classe.produtos.length > 0">
+            <div class="titulo-pagina">
+                <div>{{classe.descricao}}</div>
+            </div>
+            <app-produtosList [produtos]="classe.produtos"></app-produtosList>
+        </div>
+    </div>
+</div>

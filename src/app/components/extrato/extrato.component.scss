@@ -1,0 +1,48 @@
+.extrato {
+  color: var(--gray-light);
+  display: flex;
+  align-items: center;
+  font-family: var(--ion-font-family);
+  cursor: pointer;
+
+  .numero-pedidos {
+    width: 1.7em;
+    height: 1.7em;
+    background-color: var(--orange);
+    color: var(--white);
+    font-family: var(--ion-font-family);
+    font-weight: 600;
+    border-radius: 50px;
+    font-size: 0.375em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -4px;
+    right: -1px;
+  }
+
+  .valor {
+    font-size: 0.75em;
+  }
+
+  .icone-faturamento {
+    background: url("../../../assets/icon/bill.svg");
+    width: 1.6em;
+    height: 1.6em;
+    margin-right: 12.2px;
+    background-size: cover;
+    position: relative;
+  }
+
+  .legenda {
+    font-size: 0.4em;
+  }
+
+  &.sem-consumo {
+    .legenda {
+      font-size: 0.579em;
+    }
+   // pointer-events: none; disable for test
+  }
+}

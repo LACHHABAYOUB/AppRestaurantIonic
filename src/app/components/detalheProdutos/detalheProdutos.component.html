@@ -1,0 +1,81 @@
+<div class="detalhe-produtos">
+    <a [routerLink]="['/home/produto']" class="arrow-left-icon">
+        <img src="../../../assets/icon/left-arrow.svg" alt="">
+        <span>Voltar</span>
+    </a>
+    <div class="flex-contenedor">
+        <div *ngIf="errorMensagemProduto || errorMesagemProdutoPasso" class="estado-em-branco">
+            <fa-icon [icon]="faExclamationTriangle" class="fa-exclamation-triangle-icon"></fa-icon>
+            <div class="text">{{errorMensagemProduto || errorMesagemProdutoPasso}}</div>
+        </div>
+        <div *ngIf="carregandoProduto">
+            <app-cartao-xl-carregando></app-cartao-xl-carregando>
+        </div>
+        <div [ngClass]="{'hidden' : carregandoProduto || errorMensagemProduto}" class="m-r-lg-em"
+            *ngIf="itemPedido.produtos.length === 1">
+            <div *ngFor="let produto of itemPedido.produtos">
+                <app-cartao-xl [imgSrc]="produto?.imagem" [titulo]="produto?.descricao"
+                    [legenda]="'A PARTIR DE R$ ' + produto?.obterPrecoFormatado()" [descricao]="produto?.subDescricao"
+                    [placeHolderImagem]="'../../../assets/icon/imagem.svg'">
+                </app-cartao-xl>
+            </div>
+        </div>
+        <div [ngClass]="{'hidden' : carregandoProduto || errorMensagemProduto}" class="m-r-lg-em"
+            *ngIf="itemPedido.produtos.length > 1">
+            <app-cartao-multiplos-pizza [produtos]="itemPedido.produtos"
+                [placeHolderImagem]="'../../../assets/icon/imagem.svg'">
+            </app-cartao-multiplos-pizza>
+        </div>
+        <div *ngIf="carregandoProdutoPasso">
+            <app-carregando-configuracao-pedido></app-carregando-configuracao-pedido>
+        </div>
+        <div class="configuracao-pedido" [ngClass]="{'hidden' : carregandoProdutoPasso || errorMesagemProdutoPasso}">
+            <div class="contenedor-passos-dinamicos m-b-md">
+                <div *ngFor="let passo of passos">
+                    <app-passo *ngIf="passo.tipoPasso !== 'TAMANHO'" [passo]="passo"
+                        (onSelecionarItem)="onSelecionarItemPasso($event)">
+                    </app-passo>
+                    <app-passo-pizza *ngIf="passo.tipoPasso === 'TAMANHO'" [passo]="passo"
+                        [subDescricao]="'Escolha a quantidade de sabores'"
+                        [numeroSaborPadraoInicial]="configPizza.quantidadeSaborSelecionado"
+                        (onSelecionarItem)="onSelecionarItemPassoPizza($event)">
+                    </app-passo-pizza>
+                </div>
+            </div>
+            <div class="contenedor-observacao">
+                <div class="m-b-sm">
+                    <app-inputtext [maxlength]="60" [placeholder]="'De Quem é o lanche ?'"
+                        (onChange)="onChangeDeQuemE($event)">
+                    </app-inputtext>
+                </div>
+                <div class="m-b-md">
+                    <div class="adicionar-observacao-label">Adicionar observação</div>
+                    <app-textarea [maxlength]="255" (onChange)="onChangeObservacao($event)"
+                        [placeholder]="'Ex : Sem cebola , Sem Tomate , etc ...'">
+                    </app-textarea>
+                </div>
+                <div class="pe-de-pagina m-b-md">
+                    <div>
+                        <div class="quantidade">Quantidade</div>
+                        <app-quantidade-botao (onChange)="onChangeQuantidade($event)"></app-quantidade-botao>
+                    </div>
+                    <div style="height: 2.368em">
+                        <app-confirmacao-botao
+                            [descricao]="'ADICIONAR NO PEDIDO R$ ' + itemPedido.obterValorTotalFormatado()"
+                            style="height: inherit;" (onConfirmar)="onConfirmarItemPedido()">
+                        </app-confirmacao-botao>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="texto-pergunta m-b-xs" *ngIf="configPizza.quantidadeSaborSelecionado !== 1">
+            <span>Pizzas disponíveis para {{configPizza.quantidadeSaborSelecionado}} sabores</span>
+        </div>
+        <app-lista-horizontal-produto [produtos]="configPizza.produtosHorizontal"
+            [quantidadeMaximaParaSelecionar]="configPizza.quantidadeSaborSelecionado"
+            (onSelecionar)="onSelecionarProdutoHorizontal($event)"
+            (onExecutarQuandoForUltimoItem)="onExecutarQuandoUltimoItem($event)"></app-lista-horizontal-produto>
+    </div>
+</div>

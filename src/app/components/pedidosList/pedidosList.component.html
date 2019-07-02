@@ -1,0 +1,6 @@
+<div class="pedidos-list">
+    <div *ngFor="let item of itensPedido" class="elemento">
+        <app-pedido *ngIf="item.produtos.length === 1" [itemPedido]="item" [placeHolderImagem]="'../../../assets/icon/imagem.svg'"></app-pedido>
+        <app-item-pedido-pizza *ngIf="item.produtos.length > 1" [itemPedido]="item" [placeHolderImagem]="'../../../assets/icon/imagem.svg'"></app-item-pedido-pizza>
+    </div>
+</div>

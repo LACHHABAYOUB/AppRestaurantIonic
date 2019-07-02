@@ -1,0 +1,7 @@
+<div class="texto-pergunta m-b-xs" [ngClass]="{'m-t-md': passo.ordem != 1}">
+    <span>{{passo.descricao}}</span>
+</div>
+<app-escolhaBotao *ngFor="let item of passo.itens" [referencia]="passo.id" [item]="item" [className]="'m-t-sm'"
+    [descricao]="obterDescricao(item.descricao, item.preco)" [appColorButton]="'#FC6D18'" [selected]="item.selecionado"
+    (onSelecionar)="selecionarItem($event)">
+</app-escolhaBotao>

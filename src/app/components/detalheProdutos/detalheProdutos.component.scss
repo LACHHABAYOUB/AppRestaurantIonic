@@ -1,0 +1,161 @@
+.detalhe-produtos {
+  background-color: var(--gray-lighter);
+  padding: 13px 29px 29px 29px;
+  min-height: calc(100vh);
+  overflow-y: auto;
+
+  .flex-contenedor {
+    display: flex;
+    margin-top: 0.526em;
+    flex-wrap: wrap;
+    padding-right: 120px;
+    overflow-y: auto;
+    justify-content: space-evenly;
+
+    @media only screen and (max-width: 881px) {
+      justify-content: center;
+    }
+
+    @media (max-width: 1022px) {
+      & > app-cartao-xl {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .arrow-left-icon {
+    display: flex;
+    align-items: center;
+    width: 99px;
+    justify-content: space-between;
+    font-size: 0.947em;
+    font-family: var(--ion-font-family);
+    text-decoration: none;
+    color: var(--gray-light);
+    font-weight: 400;
+
+    img {
+      width: 2.158em;
+    }
+
+    span {
+      margin-left: 0.368em;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .m-b-md {
+    margin-bottom: 20px;
+  }
+
+  .m-t-md {
+    margin-top: 20px;
+  }
+
+  .m-t-sm {
+    margin-top: 15px;
+  }
+
+  .m-b-xs {
+    margin-bottom: 5px;
+  }
+
+  .configuracao-pedido {
+    color: var(--gray-light-lite-primary);
+    position: relative;
+    font-family: var(--ion-font-family);
+
+    .contenedor-observacao {
+      max-width: 18em;
+
+      @media only screen and (max-width: 881px) {
+        max-width: 100%;
+      }
+
+      .adicionar-observacao-label {
+        color: var(--gray-light);
+        font-size: 0.737em;
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
+
+      .pe-de-pagina {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        
+        & > div:nth-child(1) {
+          margin-right: 2em;
+          @media only screen and (max-width: 1024px) {
+            margin-right: 1em;
+          }
+        }
+      }
+
+      app-confirmacao-botao {
+        margin-top: 30px;
+      }
+
+      .campo-dono {
+        height: 46px;
+      }
+
+      .campo-observacao {
+        height: 115px;
+        padding-top: 26px;
+        padding-left: 22px;
+      }
+    }
+
+    .quantidade {
+      font-family: var(--ion-font-family);
+      font-size: 0.632em;
+      text-align: center;
+    }
+
+    @media only screen and (max-width: 881px) {
+      margin-top: 29px;
+    }
+  }
+
+  .contenedor-passos-dinamicos {
+    max-height: 10.2em;
+    overflow-x: auto;
+    max-width: 18em;
+    @media only screen and (max-width: 881px) {
+      max-width: 100%;
+    }
+  }
+
+  .estado-em-branco {
+    padding: 26px;
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .fa-exclamation-triangle-icon {
+      color: var(--gray);
+      font-size: 4.158em;
+    }
+
+    .text {
+      font-size: 1.947em;
+      color: var(--gray-light);
+    }
+  }
+
+  .m-r-lg-em {
+    margin-right: 2.342em;
+  }
+
+  .texto-pergunta {
+    color: var(--gray-light);
+    font-size: 1.737em;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,11 @@
+<div class="pedidos-em-andamento" [ngClass]="{'pendente': pedidosEmAndamento > 0}" (click)="onVerAndamentos($event)">
+  <div class="status-pedido">
+    <div class="numero-pedidos">
+      <div>{{pedidosEmAndamento}}</div>
+    </div>
+    <div>
+      <div class="titulo">Pedido em andamento</div>
+      <div class="descricao">Acompanhar status</div>
+    </div>
+  </div>
+</div>

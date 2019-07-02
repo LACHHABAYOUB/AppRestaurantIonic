@@ -1,0 +1,37 @@
+.confirmacao-botao {
+  position: relative;
+  background-color: var(--green-light);
+  color: var(--white);
+  border-radius: 5px;
+  height: 51.37px;
+  width: 467.04px;
+  font-family: var(--ion-font-family);
+  font-size: 1.316em;
+  font-weight: bold;
+  outline: none;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-around;
+  -webkit-transition-duration: 0.1s; /* Safari */
+  transition-duration: 0.1s;
+
+  & > div {
+    z-index: 2;
+  }
+
+  & > div:nth-child(1) {
+    z-index: 1;
+  }
+}
+
+.progreso-animacao {
+  width: 0%;
+  height: inherit;
+  position: absolute;
+  top: 0px;
+  background-color: var(--green-dark);
+  opacity: 0.5;
+  left: 0;
+  transition: width 0.1s ease-in-out;
+  border-radius: 5px;
+}

@@ -1,0 +1,6 @@
+<div class="horizontal-container">
+    <div class="container" *ngFor="let produto of produtos">
+            <app-container-produto-resumido class="container" [appColorButton]="'#BDBDBD'" [selected]="produto.selecionado" [produto]="produto"
+                                            [placeHolderImage]="'../../../assets/icon/imagem.svg'" (click)="selecionar(produto)"></app-container-produto-resumido>
+    </div>
+</div>

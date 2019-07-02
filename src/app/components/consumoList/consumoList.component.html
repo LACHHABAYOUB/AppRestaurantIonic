@@ -1,0 +1,7 @@
+<div class="consumo-list">
+    <div *ngFor="let pedido of pedidos" [attr.id]="pedido.produto.id" class="elemento">
+        <app-pedido [descricaoProduto]="pedido.produto.descricao" [valorTotal]="pedido.valorTotal"
+            [imegemProduto]="pedido.produto.imagem" [deQuemE]="pedido.deQuemE" [quantidade]="pedido.quantidade"
+            [placeHolderImagem]="'../../../assets/icon/imagem.svg'"></app-pedido>
+    </div>
+</div>

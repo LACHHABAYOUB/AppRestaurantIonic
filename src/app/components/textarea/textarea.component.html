@@ -1,0 +1,6 @@
+<div class="input-textarea">
+    <textarea (keyup)="onKeyUp($event)" placeholder={{placeholder}} [attr.maxlength]="maxlength"></textarea>
+    <div class="contenedor-contadora">
+        <small class="contadora">{{(maxlength-textoLength)}}</small>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+.input-textarea {
+  .title {
+    margin-bottom: 5px;
+  }
+  textarea {
+    box-shadow: 0px 0.5px 1px 0px rgba(0, 0, 0, 0.16);
+    border: 0px;
+    font-size: 0.737em;
+    padding-left: 11px;
+    color: var(--gray-light);
+    border-radius: 5px;
+    letter-spacing: -0.1px;
+    height: 7.188em;
+    width: 100%;
+    padding-top: 10px;
+
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: var(--gray);
+      font-weight: 500;
+      opacity: 1; /* Firefox */
+      
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: var(--gray);
+      font-weight: 500;
+    }
+  }
+
+  .contenedor-contadora {
+    text-align: right;
+  }
+
+  small {
+    font-size: 0.6em;
+  }
+}

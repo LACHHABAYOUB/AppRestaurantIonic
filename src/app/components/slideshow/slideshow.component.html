@@ -1,0 +1,13 @@
+<div class="slideshow" [ngClass]="{'open': open}">
+  <ion-slides [options]="slideOpts" class="slides" pager="true"
+    [options]="slideOpts">
+    <ion-slide *ngFor="let adsImage of AdsImages">
+      <div class="img"
+        [ngStyle]="{'background-image': 'url(' + adsImage + ')', 'background-repeat': 'no-repeat', 'background-size': 'contain', 'background-position': 'center',width: '70.625em', 'position': 'relative'}">
+        <button class="button" [ngStyle]="buttonStyle" (click)="onClick($event)">
+          <div class="texto">Toque para iniciar </div>
+        </button>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</div>

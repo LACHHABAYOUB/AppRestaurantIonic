@@ -1,0 +1,12 @@
+<div class="menu-grupo">
+  <div class="corpo-menu-componente">
+    <h2>Menu</h2>
+    <ul class="grupos">
+      <li *ngFor="let item of itemsLista; trackBy: trackItems" [ngClass]="{'active' : item.active }" [attr.id]="item.id"
+        (click)="selecionarItem($event)">
+        <img [attr.id]="item.id" [src]="item.imagem" alt="" (error)="onError($event)">
+        <div [attr.id]="item.id">{{item.descricao}}</div>
+      </li>
+    </ul>
+  </div>
+</div>

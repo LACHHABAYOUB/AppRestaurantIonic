@@ -1,0 +1,27 @@
+<div class="cartao-pedido">
+    <div class="display-flex">
+        <div class="conteiner-imagem">
+            <div class="pizza p-r-64-perc">
+                <div [ngClass]="this.obterClassSabores()">
+                    <img *ngFor="let produto of itemPedido.produtos; let i = index"
+                         [src]="produto.imagem" alt="" (error)="onError($event)">
+                </div>
+            </div>
+        </div>
+        <div class="informacao">
+            <div *ngFor="let produto of itemPedido.produtos; let i = index">
+                <div class="titulo">1/{{itemPedido.produtos.length + ' - ' + produto.descricao}}</div>
+            </div>
+            <div class="price">R${{itemPedido.valorTotal | FormatReal }}</div>
+            <div class="nome">{{itemPedido.deQuemE}}</div>
+        </div>
+    </div>
+    <div class="display-flex">
+        <div class="quantidade">
+            {{itemPedido.quantidade}}
+        </div>
+        <div class="ellipsis">
+            <fa-icon [icon]="faEllipsisH" class="fas fa-ellipsis-h"></fa-icon>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="tech-left-value">
+    <div *ngIf="itemPedido.produtos.length === 1">{{itemPedido.produtos[0].descricao}}</div>
+    <div *ngIf="itemPedido.produtos.length > 1">
+        <div *ngFor="let p of itemPedido.produtos">
+            1/{{itemPedido.produtos.length + ' - ' + p.descricao}}
+        </div>
+    </div>
+    <div class="sub-texto">Bacon +R$ 2.00</div>
+</div>
+<div class="tech-center-value">{{itemPedido.quantidade | FormatReal}}</div>
+<div class="tech-center-value">X</div>
+<div class="tech-center-value">R$ {{itemPedido.valorUnitario | FormatReal }}</div>
+<div class="tech-center-value">R$ {{itemPedido.valorTotal | FormatReal }}</div>
