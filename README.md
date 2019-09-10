@@ -1,6 +1,8 @@
 CommandLachhab
 
 CommandLachhab is an app that allows restaurant customers to order through tablets with IONIC 4
+
+
 NB: This App Build For tablette !!
 
 
@@ -39,8 +41,6 @@ If you want generate IOS APK
 ```sh
 ionic cordova build ios
 ```
-
-
 
 4 Author
 
