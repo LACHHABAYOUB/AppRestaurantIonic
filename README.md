@@ -34,18 +34,17 @@ cd MEDWING-FRONTEND
 
 If you want generate androis APK
 ```sh
-ionic cordova build android
+ionic cordova build Android
 ```
 If you want generate IOS APK
 
 ```sh
-ionic cordova build ios
+ionic cordova build IOS
 ```
 
 4 Author
 
 Ayoub LACHHAB
-This App Build For Medwing Company 
 
 5 Demonstration of the application
 
