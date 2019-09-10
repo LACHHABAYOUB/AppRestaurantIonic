@@ -1,6 +1,6 @@
 CommandLachhab
 
-Digital Menu is an app that allows restaurant customers to order through tablets with IONIC 4
+CommandLachhab is an app that allows restaurant customers to order through tablets with IONIC 4
 NB: This App Build For tablette !!
 
 
